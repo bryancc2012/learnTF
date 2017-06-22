@@ -63,8 +63,8 @@ X_train, X_test, y_train, y_test = train_test_split(xarray, ylable, test_size=0.
 print (X_train.shape, y_train.shape, X_test.shape, y_test.shape)
 
 dataset_size=len(X_train)
-learning_rates = 0.0011
-training_epochs = 5
+learning_rates = 0.0001
+training_epochs = 1
 batch_size = 10
 training_steps= math.ceil(dataset_size/batch_size)*training_epochs
 
@@ -96,7 +96,7 @@ def multilayer_perceptron(x, weights, biases):
         layer_3 = tf.add(tf.matmul(layer_2, weights['h3']), biases['b3'], name="layer3")
         layer_3 = tf.tanh(layer_3)
     with tf.name_scope("outlayer"):
-        out_layer = tf.matmul(layer_3, weights['out']) + biases['out']
+        out_layer = tf.nn.softmax(tf.matmul(layer_3, weights['out']) + biases['out'])
         return out_layer
 
 

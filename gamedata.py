@@ -63,6 +63,8 @@ def main():
                 print ("no score data")
                 pass
             
+            driver.close()
+
             url=oldasiaurl+gamelink[i][1]+"-show-2"  # 全部公司数据
             driver = webdriver.PhantomJS(service_args=['--ignore-ssl-errors=true'])
             driver.get(url)
@@ -80,6 +82,8 @@ def main():
             asiae2=elem.text
             elem = driver.find_element_by_id("avgeh")
             asiaeh=elem.text
+
+            driver.close()
             
             url=oldeurourl+gamelink[i][1]+"-show-2"  # 全部公司数据
             driver = webdriver.PhantomJS(service_args=['--ignore-ssl-errors=true'])
@@ -109,6 +113,8 @@ def main():
             euroedd=elem.text
             elem = driver.find_element_by_id("lslj1")
             euroeld=elem.text
+
+            driver.close()
             
             gameid=gamelink[i][1]
             gamedatatem=[gameid,score1,score2,asias1,asias2,asiash,asiae1,asiae2,asiaeh,eurosw,eurosd,eurosl,euroew,euroed,euroel,euroswd,eurosdd,eurosld,euroewd,euroedd,euroeld]
