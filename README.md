@@ -9,4 +9,4 @@ gamedata is to retrieve betting odds and score
 
 SVM and soccer guess is sci-learn and tensorflow. 
 
-so far can only achieve around 50% accuracy... maybe there is any necessary link between betting odds and game result. 
+so far can only achieve around 50% accuracy... maybe there isn't any necessary link between betting odds and game result. 
